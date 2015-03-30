@@ -16,3 +16,13 @@ body.large-font {
 body.extra-large-font {
 	font-size: 2em !important;
 }
+
+body.high-contrast {
+	color: #ffff33 !important;
+	background-color: #000000 !important;
+}
+
+body.low-contrast {
+	color: #003c87 !important;
+	background-color: #aeebff !important;
+}

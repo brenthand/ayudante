@@ -16,6 +16,21 @@
 		}
 	}
 	
+	function remClass(element, c) {
+		var currentClassValue = element.className;
+		var classToRem = c;
+		
+		if (currentClassValue.indexOf(classToRem) != -1) {
+			var startPos = currentClassValue.indexOf(classToRem);
+			var endPos =  startPos + currentClassValue.indexOf(classToRem).length;
+			while (startPos < endPos; startPos++) {
+				currentClassValue[startPos] = "";
+			}
+			
+		}
+		
+	}
+	
 	
 	
 	//Cookie handlers
