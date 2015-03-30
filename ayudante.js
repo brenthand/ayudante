@@ -17,17 +17,28 @@
 	}
 	
 	function remClass(element, c) {
+		
+		document.getElementById("bd").className =
+		document.getElementById("bd").className.replace(/\bhigh-contrast\b/,'');
+		
+		document.getElementById("bd").className =
+		document.getElementById("bd").className.replace(/\blow-contrast\b/,'');
+		/*console.log("in rem")
 		var currentClassValue = element.className;
 		var classToRem = c;
 		
 		if (currentClassValue.indexOf(classToRem) != -1) {
+			console.log("in if loop")
 			var startPos = currentClassValue.indexOf(classToRem);
 			var endPos =  startPos + currentClassValue.indexOf(classToRem).length;
-			while (startPos < endPos; startPos++) {
+			while (startPos < endPos) {
 				currentClassValue[startPos] = "";
+				startPos++
 			}
+			console.log(currentClassValue);
+			element.setAttribute("class", currentClassValue);
 			
-		}
+		}*/
 		
 	}
 	
