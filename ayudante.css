@@ -1,33 +1,33 @@
-body.extra-small-font {
+#ayudante.small-font {
    font-size: 0.5em !important;
    
 }
 
-body.normal-font {
+#ayudante.normal-font {
 	font-size: 1em !important;
    
 }
 
-body.large-font {
+#ayudante.large-font {
 	font-size: 1.5em !important;
    
 }
 
-body.extra-large-font {
+#ayudante.extra-large-font {
 	font-size: 2em !important;
 }
 
-body.high-contrast {
+#ayudante.high-contrast {
 	color: #ffff33 !important;
 	background-color: #000000 !important;
 }
 
-body.high-contrast p{
+#ayudante.high-contrast p{
 	color: white !important;
 	background-color: #000000 !important;
 }
 
-body.low-contrast {
+#ayudante.low-contrast {
 	color: #003c87 !important;
 	background-color: #aeebff !important;
 }

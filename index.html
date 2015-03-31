@@ -3,18 +3,24 @@
 <script type="text/javascript" src="ayudante.js"></script>
 <link rel="stylesheet" href="ayudante.css">
 </head>
-<body id="bd">
-
+<body >
+<div id="ayudante">
 <h1 class="test" id="header1">Header 1</h1>
 <h2 id="header2">Header 2</h2>
 <h3 id="header3">Header 3</h3>
 
 <p id="para">Paragraph test.</p>
 
-<button onclick='c()'>change</button>
-<a id="high-contrast-link" href="#" class="high-contrast-icon" data-style="high-contrast" >A</a>
-<a id="normal-contrast-link" href="#" class="normal-contrast-icon" data-style="normal-contrast" >A</a>
-<a id="low-contrast-link" href="#" class="low-contrast-icon" data-style="low-contrast" >A</a>
+
+<a id="high-contrast-link" href="#" class="high-contrast-icon" data-style="high-contrast" >H</a>
+<a id="normal-contrast-link" href="#" class="normal-contrast-icon" data-style="normal-contrast" >N</a>
+<a id="low-contrast-link" href="#" class="low-contrast-icon" data-style="low-contrast" >L</a>
+
+<hr>
+
+<a id="small-font-link" href="#" class="small-font-icon" data-style="small-font" >S</a>
+<a id="normal-font-link" href="#" class="normal-font-icon" data-style="normal-font" >M</a>
+<a id="large-font-link" href="#" class="large-font-icon" data-style="large-font" >L</a>
 
 
 <script>
@@ -22,20 +28,41 @@
 	
 	document.getElementById("high-contrast-link").addEventListener("click", function() {
 		var val = document.getElementById("high-contrast-link").getAttribute("data-style");
-		var change = document.getElementById("bd");
-		addClass(change, val);	
+		var change = document.getElementById("ayudante");
+		addContrastClass(change, val);	
 	}, false);
 	
 	document.getElementById("normal-contrast-link").addEventListener("click", function() {
 		var val = document.getElementById("normal-contrast-link").getAttribute("data-style");
-		var change = document.getElementById("bd");
-		remClass(change, "high-contrast");	
+		var change = document.getElementById("ayudante");
+		remContrastClass(change, "high-contrast");	
 	}, false);
 	
 	document.getElementById("low-contrast-link").addEventListener("click", function() {
 		var val = document.getElementById("low-contrast-link").getAttribute("data-style");
-		var change = document.getElementById("bd");
-		addClass(change, val);	
+		var change = document.getElementById("ayudante");
+		addContrastClass(change, val);	
+	}, false);
+	
+	///////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////
+	
+	document.getElementById("small-font-link").addEventListener("click", function() {
+		var val = document.getElementById("small-font-link").getAttribute("data-style");
+		var change = document.getElementById("ayudante");
+		addFontClass(change, val);	
+	}, false);
+	
+	document.getElementById("normal-font-link").addEventListener("click", function() {
+		var val = document.getElementById("normal-font-link").getAttribute("data-style");
+		var change = document.getElementById("ayudante");
+		remFontClass(change, "high-contrast");	
+	}, false);
+	
+	document.getElementById("large-font-link").addEventListener("click", function() {
+		var val = document.getElementById("large-font-link").getAttribute("data-style");
+		var change = document.getElementById("ayudante");
+		addFontClass(change, val);	
 	}, false);
 	
 	
@@ -44,5 +71,6 @@
 	//addClass(change, "soft-contrast");
 
 </script>
+</div>
 </body>
 </html>
