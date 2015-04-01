@@ -37,7 +37,7 @@ window.onload =
 	
 	*/
 	function addContrastClass(element, c) {
-		setCookie("ayudante-contrast", c, 1);
+		
 		//alert("ayudante-contrast=" + c + ";");
 		var currentClassValue = element.className;
 		var classToAdd = c;
@@ -51,10 +51,12 @@ window.onload =
 				element.className += " " + classToAdd;
 			}
 		}
+		
+		setCookie("ayudante-contrast", c, 1);
 	}
 	
 	function addFontClass(element, c) {
-		setCookie("ayudante-font", c, 1);
+		
 		var currentClassValue = element.className;
 		var classToAdd = c;
 		
@@ -67,6 +69,8 @@ window.onload =
 				element.className += " " + classToAdd;
 			}
 		}
+		
+		setCookie("ayudante-font", c, 1);
 	}
 	
 	
@@ -77,7 +81,8 @@ window.onload =
 				c = the class name that is being added
 	
 	*/
-	function remContrastClass(element, c) {		/******************* need to handle removing values from cookies */
+	function remContrastClass(element, c) {		
+		delCookie("ayudante-contrast");
 		//document.cookie="ayudante-contrast=";
 		document.getElementById("ayudante").className =
 		document.getElementById("ayudante").className.replace(/\bhigh-contrast\b/,'');
@@ -88,6 +93,7 @@ window.onload =
 	}
 	/////////////NEED TO ADD PARAM THAT ACCOUNTS FOR CONTRAST OR FONT*************
 	function remFontClass(element, c) {
+		delCookie("ayudante-font");
 		//document.cookie="ayudante-font=";
 		document.getElementById("ayudante").className =
 		document.getElementById("ayudante").className.replace(/\blarge-font\b/,'');
@@ -127,6 +133,10 @@ window.onload =
 		
 		alert("Contrast: " + contrast + "Font: " + size  );
 		
+	}
+	
+	function delCookie(name) {
+		document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 	}
 	
 	
