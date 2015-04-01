@@ -4,6 +4,25 @@
 <link rel="stylesheet" href="ayudante.css">
 </head>
 <body >
+<script>
+/*document.cookie = "ayudante=123";
+document.cookie="username=John Doe";
+
+var x = getCookie("username");
+
+alert(x);
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+}*/
+</script>
 <div id="ayudante">
 <h1 class="test" id="header1">Header 1</h1>
 <h2 id="header2">Header 2</h2>
@@ -21,6 +40,9 @@
 <a id="small-font-link" href="#" class="small-font-icon" data-style="small-font" >S</a>
 <a id="normal-font-link" href="#" class="normal-font-icon" data-style="normal-font" >M</a>
 <a id="large-font-link" href="#" class="large-font-icon" data-style="large-font" >L</a>
+
+<br /><br /><br />
+<button onclick="checkCookie()">Check Cookie</button>
 
 
 <script>

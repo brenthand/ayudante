@@ -1,18 +1,31 @@
-
-/*window.onload =
+//Better way to handle cookies onload************
+window.onload =
   function() {
-    var div = document.createElement('div');
-    div.id = 'bd';
-    if (document.body.firstChild)
-      document.body.insertBefore(div, document.body.firstChild);
-    else
-      document.body.appendChild(div);
-  };
-//document.getElementByName("body").prependTo*/
-
-
-	//Add code that sets a div right after the body element 
-	//to make class changes to the whole document
+   
+	var x = getCookie("ayudante-contrast");
+	
+	if (x == "high-contrast") { 
+		var c = document.getElementById("ayudante");
+		addContrastClass(c, "high-contrast");
+	} else if ( x == "low-contrast") {
+		var c = document.getElementById("ayudante");
+		addContrastClass(c, "low-contrast");
+	}
+	
+	//document.cookie="ayudante-font=large-font";
+	var y = getCookie("ayudante-font"); 
+	//if (y == "") { document.cookie  = "ayudante-font=normal-font"; }
+	//console.log("set font cookie");
+	if (y == "small-font") { 
+		var c = document.getElementById("ayudante");
+		addFontClass(c, "small-font");
+	} else if ( y == "large-font") {
+		var c = document.getElementById("ayudante");
+		addFontClass(c, "large-font");
+	}
+	
+	checkCookie();
+};
 	
 	
 	
@@ -24,6 +37,8 @@
 	
 	*/
 	function addContrastClass(element, c) {
+		setCookie("ayudante-contrast", c, 1);
+		//alert("ayudante-contrast=" + c + ";");
 		var currentClassValue = element.className;
 		var classToAdd = c;
 		
@@ -39,6 +54,7 @@
 	}
 	
 	function addFontClass(element, c) {
+		setCookie("ayudante-font", c, 1);
 		var currentClassValue = element.className;
 		var classToAdd = c;
 		
@@ -61,34 +77,18 @@
 				c = the class name that is being added
 	
 	*/
-	function remContrastClass(element, c) {
-		
+	function remContrastClass(element, c) {		/******************* need to handle removing values from cookies */
+		//document.cookie="ayudante-contrast=";
 		document.getElementById("ayudante").className =
 		document.getElementById("ayudante").className.replace(/\bhigh-contrast\b/,'');
 		
 		document.getElementById("ayudante").className =
 		document.getElementById("ayudante").className.replace(/\blow-contrast\b/,'');
-		/*console.log("in rem")
-		var currentClassValue = element.className;
-		var classToRem = c;
-		
-		if (currentClassValue.indexOf(classToRem) != -1) {
-			console.log("in if loop")
-			var startPos = currentClassValue.indexOf(classToRem);
-			var endPos =  startPos + currentClassValue.indexOf(classToRem).length;
-			while (startPos < endPos) {
-				currentClassValue[startPos] = "";
-				startPos++
-			}
-			console.log(currentClassValue);
-			element.setAttribute("class", currentClassValue);
-			
-		}*/
 		
 	}
 	/////////////NEED TO ADD PARAM THAT ACCOUNTS FOR CONTRAST OR FONT*************
 	function remFontClass(element, c) {
-		
+		//document.cookie="ayudante-font=";
 		document.getElementById("ayudante").className =
 		document.getElementById("ayudante").className.replace(/\blarge-font\b/,'');
 		
@@ -119,17 +119,15 @@
 		return "";
 	}
 	
-	/*function checkCookie() {
-		var username=getCookie("username");
-		if (username!="") {
-			alert("Welcome again " + username);
-		}else{
-			username = prompt("Please enter your name:", "");
-			if (username != "" && username != null) {
-				setCookie("username", username, 365);
-			}
-		}
-	}*/
+	function checkCookie() {
+		
+		var contrast = getCookie("ayudante-contrast");
+		var size = getCookie("ayudante-font");
+		
+		
+		alert("Contrast: " + contrast + "Font: " + size  );
+		
+	}
 	
 	
 	/*
