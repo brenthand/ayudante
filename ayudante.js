@@ -1,3 +1,6 @@
+
+//JQuery text resizer plugin
+
 //Better way to handle cookies onload************
 window.onload =
   function() {
@@ -91,7 +94,14 @@ window.onload =
 		document.getElementById("ayudante").className.replace(/\blow-contrast\b/,'');
 		
 	}
-	/////////////NEED TO ADD PARAM THAT ACCOUNTS FOR CONTRAST OR FONT*************
+	
+	/*
+		Function to remove a class from a specified element
+		
+		@params element = the element that the class is being added to 
+				c = the class name that is being added
+	
+	*/
 	function remFontClass(element, c) {
 		delCookie("ayudante-font");
 		//document.cookie="ayudante-font=";
@@ -104,8 +114,16 @@ window.onload =
 	}
 	
 	//Cookies need to be added to keep selection across pages
-	
 	//Cookie handlers
+	
+	/*
+		Function sets cookie value
+		
+		@params name = the name of the cookie	
+				v = the value of the cookie
+				t the time in days that the cookie should stay live
+		
+	*/
 	function setCookie(name, v, t) {
 		var d = new Date();
 		d.setTime(d.getTime() + (t*24*60*60*1000));
@@ -113,6 +131,13 @@ window.onload =
 		document.cookie = name + "=" + v +"; " + expire;
 	}
 	
+	
+	/*
+		function gets the value of the specified cookie. If cookie does not exist return empty string
+		
+		@params name = the name of the cookie
+	
+	*/
 	function getCookie(name) {
 		name += "=";
 		var ca = document.cookie.split(';');
@@ -125,6 +150,13 @@ window.onload =
 		return "";
 	}
 	
+	
+	/*
+		Function to check the values of the cookies used in ayudante
+		
+		********** FOR TEST ONLY ********
+	
+	*/
 	function checkCookie() {
 		
 		var contrast = getCookie("ayudante-contrast");
@@ -135,6 +167,12 @@ window.onload =
 		
 	}
 	
+	/*
+		Function to delete a cookie by name
+		
+		@params name = the name of the cookie to be deleted
+	
+	*/
 	function delCookie(name) {
 		document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 	}

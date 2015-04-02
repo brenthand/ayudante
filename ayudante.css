@@ -1,20 +1,20 @@
 #ayudante.small-font {
-   font-size: 0.5em !important;
+   font-size: .75em !important;
    
 }
 
 #ayudante.normal-font {
-	font-size: 1em !important;
-   
-}
-
-#ayudante.large-font {
 	font-size: 1.5em !important;
    
 }
 
-#ayudante.extra-large-font {
+#ayudante.large-font {
 	font-size: 2em !important;
+   
+}
+
+#ayudante.extra-large-font {
+	font-size: 3em !important;
 }
 
 #ayudante.high-contrast {
@@ -31,3 +31,23 @@
 	color: #003c87 !important;
 	background-color: #aeebff !important;
 }
+
+.ayudante-menu  {
+	
+	position:fixed; 
+	top:0px; 
+	margin: 0; 
+	padding: 0px;
+	overflow: hidden;
+	z-index:100000; 
+	width:100%;
+	background:lightgray; 
+	height:25px; 
+	opacity:0.8
+	
+} 
+
+.ayudante-menu a {
+	padding-left: 1.5em;
+ }
+
