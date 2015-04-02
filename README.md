@@ -4,4 +4,5 @@ This tool allows a web developer to easily integrate accessibility into their we
 
 #How to 
 
-add "<div class="ayudante">" right after the body tag on your pages. 
+copy the repo and add the code below:
+add <script type='text/javascript' src='ayudante/ayudante.js'></script> in the document head.
