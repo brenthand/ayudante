@@ -4,6 +4,32 @@
 //Better way to handle cookies onload************
 window.onload =
   function() {
+	  
+	//Add link to css file to allow only adding one link to html page
+	var style = document.createElement('link');
+	style.rel = 'stylesheet';
+	style.href = 'ayudante.css';
+	document.getElementsByTagName('head')[0].appendChild(style);
+	
+	var menu = document.createElement('div');
+	menu.class = 'ayudante-menu';
+	menu.id = "ayu";
+	var e = document.getElementsByTagName('body')[0];
+	e.insertBefore(menu, e.firstChild);
+	//document.getElementsByTagName('body')[0].appendChild(menu);
+	
+	
+	
+	var menu_html = '<a href="main-content">Main Content</a> ' +
+		'<a href="skip-nav">Skip To Navigation</a> ' +
+		'<a id="high-contrast-link" href="#" class="high-contrast-icon" data-style="high-contrast" >High Contrast</a> ' +
+		'<a id="normal-contrast-link" href="#" class="normal-contrast-icon" data-style="normal-contrast" >Normal Contrast</a> ' +
+		'<a id="low-contrast-link" href="#" class="low-contrast-icon" data-style="low-contrast" >Low Contrast</a> ' +
+		'<a id="small-font-link" href="#" class="small-font-icon" data-style="small-font" >Small font </a> ' +
+		'<a id="normal-font-link" href="#" class="normal-font-icon" data-style="normal-font" >Normal Font</a> ' +
+		'<a id="large-font-link" href="#" class="large-font-icon" data-style="large-font" >Large Font</a> ';
+		
+	document.getElementById("ayu").innerHTML = menu_html;
    
 	var x = getCookie("ayudante-contrast");
 	
@@ -28,6 +54,44 @@ window.onload =
 	}
 	
 	checkCookie();
+	document.getElementById("high-contrast-link").addEventListener("click", function() {
+		var val = document.getElementById("high-contrast-link").getAttribute("data-style");
+		var change = document.getElementById("ayudante");
+		addContrastClass(change, val);	
+	}, false);
+	
+	document.getElementById("normal-contrast-link").addEventListener("click", function() {
+		var val = document.getElementById("normal-contrast-link").getAttribute("data-style");
+		var change = document.getElementById("ayudante");
+		remContrastClass(change, "high-contrast");	
+	}, false);
+	
+	document.getElementById("low-contrast-link").addEventListener("click", function() {
+		var val = document.getElementById("low-contrast-link").getAttribute("data-style");
+		var change = document.getElementById("ayudante");
+		addContrastClass(change, val);	
+	}, false);
+	
+	///////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////
+	
+	document.getElementById("small-font-link").addEventListener("click", function() {
+		var val = document.getElementById("small-font-link").getAttribute("data-style");
+		var change = document.getElementById("ayudante");
+		addFontClass(change, val);	
+	}, false);
+	
+	document.getElementById("normal-font-link").addEventListener("click", function() {
+		var val = document.getElementById("normal-font-link").getAttribute("data-style");
+		var change = document.getElementById("ayudante");
+		remFontClass(change, "high-contrast");	
+	}, false);
+	
+	document.getElementById("large-font-link").addEventListener("click", function() {
+		var val = document.getElementById("large-font-link").getAttribute("data-style");
+		var change = document.getElementById("ayudante");
+		addFontClass(change, val);	
+	}, false);
 };
 	
 	
