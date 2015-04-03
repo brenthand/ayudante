@@ -1,7 +1,7 @@
 
 //JQuery text resizer plugin
 
-//Better way to handle cookies onload************
+
 window.onload =
   function() {
 	  
@@ -54,6 +54,7 @@ window.onload =
 	}
 	
 	checkCookie();
+	
 	document.getElementById("high-contrast-link").addEventListener("click", function() {
 		var val = document.getElementById("high-contrast-link").getAttribute("data-style");
 		var change = document.getElementById("ayudante");
