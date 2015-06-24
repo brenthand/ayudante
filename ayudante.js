@@ -1,5 +1,5 @@
 
-//JQuery text resizer plugin
+
 
 
 window.onload =
@@ -41,10 +41,9 @@ window.onload =
 		addContrastClass(c, "low-contrast");
 	}
 	
-	//document.cookie="ayudante-font=large-font";
+	
 	var y = getCookie("ayudante-font"); 
-	//if (y == "") { document.cookie  = "ayudante-font=normal-font"; }
-	//console.log("set font cookie");
+	
 	if (y == "small-font") { 
 		var c = document.getElementById("ayudante");
 		addFontClass(c, "small-font");
@@ -72,9 +71,6 @@ window.onload =
 		var change = document.getElementById("ayudante");
 		addContrastClass(change, val);	
 	}, false);
-	
-	///////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////
 	
 	document.getElementById("small-font-link").addEventListener("click", function() {
 		var val = document.getElementById("small-font-link").getAttribute("data-style");
@@ -151,7 +147,7 @@ window.onload =
 	*/
 	function remContrastClass(element, c) {		
 		delCookie("ayudante-contrast");
-		//document.cookie="ayudante-contrast=";
+		
 		document.getElementById("ayudante").className =
 		document.getElementById("ayudante").className.replace(/\bhigh-contrast\b/,'');
 		
