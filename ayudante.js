@@ -2,13 +2,17 @@
 
 
 
-window.onload =
-  function() {
+
+$(document).ready(function() {
 	  
 	//Add link to css file to allow only adding one link to html page
 	var style = document.createElement('link');
 	style.rel = 'stylesheet';
-	style.href = 'ayudante.css';
+	
+	//THIS IS FOR TESTING ONLY NEED TO ***************************************
+	//PUBLISH JS ONCE DONE the '../../' WILL NO LNGER BE NEEDED **************
+	style.href = '../../ayudante.css';
+	
 	document.getElementsByTagName('head')[0].appendChild(style);
 	
 	var menu = document.createElement('div');
@@ -89,7 +93,7 @@ window.onload =
 		var change = document.getElementById("ayudante");
 		addFontClass(change, val);	
 	}, false);
-};
+});
 	
 	
 	
@@ -253,6 +257,23 @@ window.onload =
 		x.scrollIntoView();
 	}
 	
+	function addAlt() {
+		$("img").each(function(i, ele) {
+			alert("b4 if");
+			if( !$(ele).attr("alt") ) { alert("in if"); $(ele).attr("alt", $(ele).attr("src")) };
+	})};
+	
 	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
