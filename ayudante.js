@@ -52,7 +52,7 @@ window.onload =
 		addFontClass(c, "large-font");
 	}
 	
-	checkCookie();
+	//checkCookie();
 	
 	document.getElementById("high-contrast-link").addEventListener("click", function() {
 		var val = document.getElementById("high-contrast-link").getAttribute("data-style");
