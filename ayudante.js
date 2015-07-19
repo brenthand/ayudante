@@ -231,7 +231,7 @@ $(document).ready(function() {
 		alert("Contrast: " + contrast + "Font: " + size  );
 		
 	}
-	
+
 	/*
 		Function to delete a cookie by name
 		
