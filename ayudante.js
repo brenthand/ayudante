@@ -1,16 +1,19 @@
-
-
-
-
-
 /*########################################################################################
-
-
-
-
+		                        _______                                                         
+                            \  ___ `'.                _..._                  __.....__      
+        .-.          .-      ' |--.\  \             .'     '.            .-''         '.    
+         \ \        / /      | |    \  '           .   .-.   .     .|   /     .-''"'-.  `.  
+    __    \ \      / /       | |     |  '    __    |  '   '  |   .' |_ /     /________\   \ 
+ .:--.'.   \ \    / /_    _  | |     |  | .:--.'.  |  |   |  | .'     ||                  | 
+/ |   \ |   \ \  / /| '  / | | |     ' .'/ |   \ | |  |   |  |'--.  .-'\    .-------------' 
+`" __ | |    \ `  /.' | .' | | |___.' /' `" __ | | |  |   |  |   |  |   \    '-.____...---. 
+ .'.''| |     \  / /  | /  |/_______.'/   .'.''| | |  |   |  |   |  |    `.             .'  
+/ /   | |_    / / |   `'.  |\_______|/   / /   | |_|  |   |  |   |  '.'    `''-...... -'    
+\ \._,\ '/|`-' /  '   .'|  '/            \ \._,\ '/|  |   |  |   |   /                      
+ `--'  `"  '..'    `-'  `--'              `--'  `" '--'   '--'   `'-'                       
 ########################################################################################*/
 	
-	//Athena acc. plugin that changes dom of web page and allows it be be enabled for screen readers
+// acc. plugin that changes dom of web page and allows it be be enabled for screen readers
 //jquery must be included for this script to work
 
 
@@ -31,9 +34,12 @@ function get_all_img() {
 
 
 
+/*
+	Function is SLOW. it parses whole DOM to find an element with a matching attribute.
+	AVOID USING
 
-function get_by_attr(a)
-{
+*/
+function get_by_attr(a) {
   var matchingElements = [];
   var allElements = get_all();
   for (var i = 0, n = allElements.length; i < n; i++)
@@ -77,17 +83,14 @@ $(document).ready(function () {
   
   get_all_img();
   
-  has_onclick_remove(e);
+  //has_onclick_remove(e);
   
+  
+	/*var t0 = performance.now();
+	get_by_attr("alt");
+	var t1 = performance.now();
+	console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")*/
   
   
 });
-	
-	
-	
-	
-	
-	
-	
-	
 	
