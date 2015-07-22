@@ -55,6 +55,9 @@ function get_by_attr(a) {
 
 /*
 functions returns an array of all tags in DOM
+
+Function is SLOW. it parses whole DOM to find an element with a matching attribute.
+	AVOID USING
 */
 function get_all() {
 	return document.getElementsByTagName('*');
@@ -62,18 +65,20 @@ function get_all() {
 
 
 /*
-if element has onclick funcion remove it and add a JS listener
-
-TODO Need to capture original onclick event and ad to new script 
+if element has onclick funcion remove it and add a JS listener to replace
+ 
 */
 function has_onclick_remove(e) {
-	if (e.getAttribute("onclick") !== null) {
+	if (e.getAttribute("onClick") != null) {
+		var x = e.getAttribute("onClick");
 		e.removeAttribute("onClick");
 		var rand_id = Math.floor((Math.random() * 100000) + 1);
 		$(e).attr("ayu-id", rand_id);
-		$( "body" ).append("<script>  $( \"[ayu-id='" + rand_id + "']\" ).click(function() { alert( 'Handler for .click() called.' );});");
+		$( "body" ).append("<script>  $( \"[ayu-id='" + rand_id + "']\" ).click(function() {" + x + ";});");
 	}
 }
+
+
 
 
 //Test function
@@ -83,7 +88,7 @@ $(document).ready(function () {
   
   get_all_img();
   
-  //has_onclick_remove(e);
+  has_onclick_remove(e); 
   
   
 	/*var t0 = performance.now();
