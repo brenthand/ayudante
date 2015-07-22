@@ -81,7 +81,8 @@ function has_onclick_remove(e) {
 
 
 
-//Test function
+//Test function when moved to production this function will run all operations on DOM
+
 $(document).ready(function () {
   
   var e = document.getElementById("btn");
