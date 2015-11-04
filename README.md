@@ -5,4 +5,4 @@ This tool allows a web developer to easily integrate accessibility into their we
 #How to 
 
 copy the repo and add the code below:
-add <script type='text/javascript' src='ayudante/ayudante.js'></script> in the document head.
+add ```<script type='text/javascript' src='ayudante/ayudante.js'></script>``` in the document head.
