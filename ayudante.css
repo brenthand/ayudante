@@ -1,0 +1,90 @@
+#ayudante.small-font { 
+   font-size: .75em !important;
+   
+}
+
+#ayudante.normal-font {
+	font-size: 1em !important;
+   
+}
+
+#ayudante.large-font {
+	font-size: 2em !important;
+   
+}
+
+#ayudante.extra-large-font {
+	font-size: 3em !important;
+}
+
+#ayudante.high-contrast {
+	color: #ffff33 !important;
+	background-color: #000000 !important;
+}
+
+#ayudante.high-contrast p{
+	color: white !important;
+	background-color: #000000 !important;
+}
+#ayudante.high-contrast h1, h2, h3, h4, h5, h6{
+	color: #ffff33 !important;
+	background-color: #000000 !important;
+}
+
+#ayudante.low-contrast {
+	color: #003c87 !important;
+	background-color: #aeebff !important;
+}
+
+.ayudante-menu  {
+	
+	position:fixed; 
+	top:0px; 
+	margin: 0; 
+	padding: 0px;
+	overflow: hidden;
+	
+	width:100%;
+	background:lightgray; 
+	height:25px; 
+	opacity:0.8
+	
+} 
+
+.ayudante-menu a {
+	padding-left: 1.5em;
+ }
+ 
+ #ayu-skip-to-link {position:absolute;left:-1000px;
+ top:-1000px;width:1px;
+ height:1px;text-align: left;overflow:hidden;
+ 
+}
+ #ayu-skip-to-link:focus, #ayu-skip-to-link:active, #ayu-skip-to-link:hover {
+ position:absolute;left:0;top:0;width:auto;height:auto;
+ overflow:visible;background-color:#FF3;color:black;border: 1px dotted #000;z-index: 100000;} 
+ 
+#ayu a
+{ 
+	position:absolute; 
+	left:-10000px; 
+	top:auto; 
+	width:1px; 
+	height:1px; 
+	overflow:hidden;
+} 
+ 
+#ayu a:focus , #ayu a:active, #ayu a:hover 
+{ 
+	position:absolute;
+	left:0;
+	top:0;
+	width:auto;
+	height:auto;
+	overflow:visible;
+	background-color:#FF3;
+	color:black;
+	border: 1px dotted #000;
+	z-index: 100000;
+} 
+
